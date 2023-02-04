@@ -121,10 +121,10 @@ namespace SimpleHealth
         /// Apply damage to this Health System.
         /// </summary>
         /// <param name="amount">The amount of damage to apply</param>
-        /// <returns><c>true</c> if the damage is applied, or <c>false</c> if the Health System is currently cooling down.</returns>
+        /// <returns><c>true</c> if the damage is applied, or <c>false</c> if the Health System is currently cooling down or is already dead.</returns>
         public bool Damage(float amount)
         {
-            if (IsCoolingDown)
+            if (IsCoolingDown || Health <= 0)
                 return false;
 
             Health -= amount;
@@ -132,6 +132,7 @@ namespace SimpleHealth
             if (Health <= 0)
             {
                 Health = 0;
+                Invoke_OnHealthChange(Health, -amount);
                 Invoke_OnDie();
                 return true;
             }
