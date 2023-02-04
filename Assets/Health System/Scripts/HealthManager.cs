@@ -29,11 +29,22 @@ namespace SimpleHealth
         private float _cooldownTimer;
         private bool _coolingDown;
 
+        /// <summary>
+        ///     <para>Event called when the health gets changed, either because it took damage or got healed.</para>
+        ///     <para>
+        ///         The first parameter is the current health value (after changing), and the second parameter is
+        ///         the amount of health changed (negative value for damage, positive value for healing)
+        ///     </para>
+        /// </summary>
         public event UnityAction<float, float> OnHealthChange;
+        /// <summary>Event called when the health reaches zero, indicating the target object died.</summary>
         public event UnityAction OnDie;
+        /// <summary>Event called when the cooldown started.</summary>
         public event UnityAction OnCooldownStart;
+        /// <summary>Event called when the cooldown ended.</summary>
         public event UnityAction OnCooldownEnd;
 
+        /// <summary>Gets whether the Health System is currently cooling down.</summary>
         public bool IsCoolingDown
         {
             get => _coolingDown;
@@ -51,6 +62,11 @@ namespace SimpleHealth
             }
         }
 
+        /// <summary>
+        ///     <para>Gets or sets the cooldown time (in seconds)</para>
+        ///     <para>Set it as 0 (zero) for no cooldown.</para>
+        ///     <para>It only allows values above 0 (zero). If a value bellow 0 is passed to this property, it is set to 0 automatically.</para>
+        /// </summary>
         public float Cooldown { 
             get => _cooldown; 
             set
@@ -61,9 +77,23 @@ namespace SimpleHealth
                     _cooldown = value;
             }
         }
+
+        /// <summary>
+        ///     <para>Gets the Cooldown Timer. It represents the time left for the cooldown to end (if the it is currently cooling down).</para>
+        ///     <para>When the Health system is not cooling down, it always returns <c>0</c> (zero).</para>
+        /// </summary>
         public float CooldownTimer { get => IsCoolingDown ? _cooldownTimer : 0; }
 
+        /// <summary>Gets the current Health value</summary>
         public float Health { get; private set; }
+
+        /// <summary>
+        ///     <para>Gets or sets this Health System maximum health.</para>
+        ///     <para>
+        ///         When setting the Max Health bellow the current health, the current <see cref="Health"/> property is
+        ///         set with the Max Health value.
+        ///     </para>
+        /// </summary>
         public float MaxHealth
         {
             get => _maxHealth; 
@@ -87,6 +117,11 @@ namespace SimpleHealth
             }
         }
 
+        /// <summary>
+        /// Apply damage to this Health System.
+        /// </summary>
+        /// <param name="amount">The amount of damage to apply</param>
+        /// <returns><c>true</c> if the damage is applied, or <c>false</c> if the Health System is currently cooling down.</returns>
         public bool Damage(float amount)
         {
             if (IsCoolingDown)
@@ -109,6 +144,10 @@ namespace SimpleHealth
             return true;
         }
 
+        /// <summary>
+        ///     <para>Adds health to this Health System</para>
+        /// </summary>
+        /// <param name="amount">The amount of health to add.</param>
         public void Heal(float amount)
         {
             Health += amount;
