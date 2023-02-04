@@ -11,7 +11,7 @@ A simple Health System for Unity that can be used on a variety of types of games
 
 ## Setup
 
-Simply download and import the package into your project.
+Simply download and import the [package](https://github.com/LeandroDotta/Unity-SimpleHealthSystem/releases) into your project.
 
 Optionally, you can include a **Samples** folder with Scenes that demonstrate how the component can be used.
 
