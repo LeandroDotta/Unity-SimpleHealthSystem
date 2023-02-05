@@ -2,12 +2,15 @@
 
 A simple Health System for Unity that can be used on a variety of types of games
 
+![simple-health-system-sample](https://user-images.githubusercontent.com/1856860/216840238-86b43aa5-ca4a-48b5-9cec-78624eee5d27.gif)
+
 ## Features 
 
 - Has a `HealthManager`component that can be attached to any GameObject;
 - Event-based calls, like when the health gets changed or when it dies;
 - Cooldown option, with a configurable value;
-- Easy to use (simply call the methods `Damage` or `Heal` to change the health).
+- Easy to use (simply call the methods `Damage` or `Heal` to change the health);
+- A ready to use Health Bar UI.
 
 ## Setup
 
