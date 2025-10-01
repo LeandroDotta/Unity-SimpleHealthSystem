@@ -1,0 +1,17 @@
+{
+    "name": "com.leandrodotta.simple-health-system",
+    "version": "1.1.1",
+    "displayName": "Simple Health System",
+    "description": "A simple Health System for Unity that can be used on a variety of types of games",
+    "documentationUrl": "https://github.com/LeandroDotta/Unity-SimpleHealthSystem",
+
+    "author": {
+        "name": "Leandro Dotta",
+        "email": "leandrodotta@gmail.com"
+    },
+    "keywords": [
+        "health",
+        "health-manager",
+        "health-system"
+    ]
+}
