@@ -14,6 +14,25 @@ A simple Health System for Unity that can be used on a variety of types of games
 
 ## Setup
 
+### Package Manager (Faster & Easier)
+
+In Unity's Package Manager window, click the + button (top-left):
+
+<img width="1075" height="755" alt="image" src="https://github.com/user-attachments/assets/efcfcace-96ed-45d9-a6ad-f81fbce5ca63" />
+
+Next:
+- Choose the option **_"Install package from git URL..."_**
+- Type the repository URL:
+    - Either HTTPS: `https://github.com/LeandroDotta/Unity-SimpleHealthSystem.git`, or
+    - SSH (require permission): `git@github.com:LeandroDotta/Unity-SimpleHealthSystem.git`
+- Click **Install**
+
+<img width="1072" height="109" alt="image" src="https://github.com/user-attachments/assets/318caf68-adc7-4ce5-bf85-309c45ccd3cc" />
+
+
+
+### Manual Download
+
 Simply download and import the [package](https://github.com/LeandroDotta/Unity-SimpleHealthSystem/releases) into your project.
 
 Optionally, you can include a **Samples** folder with Scenes that demonstrate how the component can be used.
